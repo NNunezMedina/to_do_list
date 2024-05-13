@@ -2,6 +2,7 @@ const newItem = document.querySelector('#item_to_add')
 const ulElements = document.querySelector('#to_do_list')
 const addButton = document.querySelector('#addItem')
 const completedList = document.querySelector('#completed_list')
+const eliminateButton = document.querySelector('#delete')
 
 
 function addItem(event) {
@@ -29,6 +30,12 @@ function addItem(event) {
             completedList.appendChild(listItem);
         }
     }
+
+    function deleteItem() {
+        const listItem = ulElements.querySelector('li:last-child');
+       listItem.remove();
+    }
+    eliminateButton.addEventListener("click", deleteItem);
 
 
 
