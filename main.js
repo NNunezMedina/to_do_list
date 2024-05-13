@@ -3,7 +3,9 @@ const ulElements = document.querySelector('#to_do_list')
 const addButton = document.querySelector('#addItem')
 const completedList = document.querySelector('#completed_list')
 const eliminateButton = document.querySelector('#delete')
+const resetButton = document.querySelector('#reset');
 
+const completedElements = [];
 
 function addItem(event) {
     if(event.target.tagName !== 'INPUT') {
@@ -28,6 +30,7 @@ function addItem(event) {
 
         if(checkbox.checked) {
             completedList.appendChild(listItem);
+            completedElements.push(listItem);
         }
     }
 
@@ -36,6 +39,12 @@ function addItem(event) {
        listItem.remove();
     }
     eliminateButton.addEventListener("click", deleteItem);
+
+    function clearList() {
+        completedList.innerHTML = '';
+        // completedElements.splice(0,completedElements.length);
+    }
+    resetButton.addEventListener("click",clearList);
 
 
 
