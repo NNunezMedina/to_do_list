@@ -42,7 +42,6 @@ function addItem(event) {
 
     function clearList() {
         completedList.innerHTML = '';
-        // completedElements.splice(0,completedElements.length);
     }
     resetButton.addEventListener("click",clearList);
 
